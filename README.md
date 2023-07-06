@@ -4,10 +4,10 @@
 
 Controls (Player1/Player2)
 --------
-Z/UpArrow : Jump
-Q/LeftArrow : Move forward
-D/RightArrow : Move backward
-S/DownArrow : Attack
+- Z/UpArrow : Jump
+- Q/LeftArrow : Move forward
+- D/RightArrow : Move backward
+- S/DownArrow : Attack
 
 How it works
 --------
