@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: 'Press Start 2P', cursive;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }  
+
+        #menuContainer {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 1024px;
+            height: 576px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-image: url('Gamelogo.png');
+        }
+
+        #playerSelectionMenu {
+            width: 1024px;
+            height: 576px;
+            border: 4px solid black;
+            display: none;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            justify-content: center;
+            align-items: center;
+            background:rgb(3, 0, 0);
+        }
+
+        .playerSelectionImages {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .playerSelectionImages img {
+            width: calc(200px - 20px);
+            height: 200px;
+            margin: 0 10px;
+            cursor: pointer;
+        }
+
+        .playerSelectionImages img:first-child {
+            margin-left: 0;
+        }
+
+        .playerSelectionImages img:last-child {
+            margin-right: 0;
+        }
+
+        .playerSelectionArrows {
+            position: absolute;
+            top: 50%;
+            left: 100px;
+            transform: translateY(-50%);
+            display: flex;
+        }
+
+        .playerSelectionArrows img {
+            width: 50px;
+            height: 50px;
+            margin: 0 10px;
+            cursor: pointer;
+        }
+
+        #validatedText {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: rgb(204, 77, 79);
+            cursor: pointer;
+        }
+
+        .avatarSelectionImages {
+            position: absolute;
+            bottom: 75px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .avatarSelectionImages img {
+            width: 75px;
+            height: 75px;
+            margin: 0 10px;
+            cursor: pointer;
+        }
+
+        .selected {
+            border: 2px solid yellow;
+        }
+
+        .selected2 {
+            border: 2px solid rgb(30, 23, 240);
+        }
+
+        .selected3 {
+            border: 2px solid rgb(204,77,79);
+        }
+
+
+        .playerText {
+            position: absolute;
+            color: blue;
+            font-size: 14px;
+            font-weight: bold;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Player Selection Menu -->
+    <div id="playerSelectionMenu">
+        <h1 style="position: absolute; top: 20px; left: 50%; transform: translateX(-50%); color: white; text-align: center;">Map selection</h1>
+        <h1 style="position: absolute; top: 60%; left: 50%; transform: translate(-50%, -50%); color: white; text-align: center;">Player selection</h1>
+        <div class="playerSelectionImages">
+            <img src="./img/background1.jpg" alt="map 1" style="margin-bottom: 200px;width: 150px;"id="map1" onclick="selectMap('map1', 'bg1')">
+            <img src="./img/background2.jpg" alt="map 2" style="margin-bottom: 200px;width: 150px;"id="map2" onclick="selectMap('map2', 'bg2')">
+            <img src="./img/background3.jpg" alt="map 3" style="margin-bottom: 200px;width: 150px;"id="map3" onclick="selectMap('map3', 'bg3')">
+            <img src="./img/background4.jpg" alt="map 4" style="margin-bottom: 200px;width: 150px;"id="map4" onclick="selectMap('map4', 'bg4')">
+            <img src="./img/background5.jpg" alt="map 5" style="margin-bottom: 200px;width: 150px;"id="map5" onclick="selectMap('map5', 'bg5')">
+        </div>
+        <h2 id="validatedText" onclick="loadGame()">Valider</h2>
+        <div class="avatarSelectionImages">
+            <img src="Avatar1head.png" alt="avatar 1" style="margin-top: 300px; width: 75px; height: 75px;" id="avatar1" onclick="selectAvatar('avatar1', 'Valeur1')">
+            <img src="Avatar2head.png" alt="avatar 2" style="margin-top: 300px; width: 75px; height: 75px;" id="avatar2" onclick="selectAvatar('avatar2', 'Valeur2')">
+            <img src="Avatar3head.png" alt="avatar 3" style="margin-top: 300px; width: 75px; height: 75px;" id="avatar3" onclick="selectAvatar('avatar3', 'Valeur3')">
+            <img src="Avatar4head.png" alt="avatar 4" style="margin-top: 300px; width: 75px; height: 75px;" id="avatar4" onclick="selectAvatar('avatar4', 'Valeur4')">
+            <img src="Avatar5head.png" alt="avatar 5" style="margin-top: 300px; width: 75px; height: 75px;" id="avatar5" onclick="selectAvatar('avatar5', 'Valeur5')">
+            <img src="Avatar6head.png" alt="avatar 6" style="margin-top: 300px; width: 75px; height: 75px;" id="avatar6" onclick="selectAvatar('avatar6', 'Valeur6')">
+            <img src="Avatar7head.png" alt="avatar 7" style="margin-top: 300px; width: 75px; height: 75px;" id="avatar7" onclick="selectAvatar('avatar7', 'Valeur7')">
+            <img src="Avatar8head.png" alt="avatar 8" style="margin-top: 300px; width: 75px; height: 75px;" id="avatar8" onclick="selectAvatar('avatar8', 'Valeur8')">
+        </div>
+    </div>
+
+    <!-- Red Container -->
+    <div id="redContainer" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); display: none; margin-top: 1px;">
+        <!-- Smaller Red Container -->
+        <div style="position: absolute; display: flex; width: 100%; align-items: center;padding: 20px;">
+            <!-- Player 1 health -->
+            <div style="position: relative;width: 100%; display: flex;justify-content: flex-end;border-top: 4px solid white;border-left: 4px solid white;border-bottom: 4px solid white;">
+                <div style="background-color: red ; height: 30px;width: 100%;"></div>
+                <div id="playerhealth" style="position: absolute; background: #0fef29;top:0;right:0;bottom:0;width:100%"></div>
+            </div>
+            <!-- Timer -->
+            <div id="timer" style="background-color: black;width: 100px;height: 50px; flex-shrink: 0;display: flex;align-items: center;justify-content: center;color:white;border: 4px solid white">10</div>
+
+            <!-- Player 2 (Enemy) health -->
+            <div style="position: relative;width: 100%;border-top: 4px solid white;border-right: 4px solid white;border-bottom: 4px solid white;">
+                <div style="background-color: red ; height: 30px;"></div>
+                <div id="enemyhealth" style="position: absolute; background: #0fef29;top:0;right:0;bottom:0;width:100%"></div>
+            </div>
+            <div></div>
+        </div>
+        <div id="displayText" style="position: absolute;color: yellow;align-items: center;justify-content: center;top: 0;right: 0;bottom: 0;left: 0;display: none;">Tie</div>
+        <canvas></canvas>
+    </div>
+
+    <!-- Main Menu -->
+    <div id="menuContainer">
+        <h1 id="menuText" style="color: rgb(204, 77, 79);font-size: 20px; animation: blink 1s infinite; cursor: pointer;" onclick="startGame()">Click Here to Start</h1>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js" integrity="sha512-H6cPm97FAsgIKmlBA4s774vqoN24V5gSQL4yBTDOY2su2DeXZVhQPxFK4P6GPdnZqM9fg1G3cMv5wD7e6cFLZQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/classes.js"></script>
+
+    <script>
+        
+        gsap.to("#menuText", {opacity: 0, repeat: -1, yoyo: true});
+
+        
+        function startGame() {
+            var menuContainer = document.getElementById("menuContainer");
+            var redContainer = document.getElementById("redContainer");
+            var playerSelectionMenu = document.getElementById("playerSelectionMenu");
+
+            menuContainer.style.display = "none";
+            redContainer.style.display = "none";
+            playerSelectionMenu.style.display = "flex";
+        }
+
+        var selectedAvatarValues = [];
+        var selectedMapValues = [];
+
+        // Fonction pour sélectionner un avatar
+        function selectAvatar(avatarId, value) {
+            var avatarImage = document.getElementById(avatarId);
+            if (selectedAvatar.includes(avatarId)) {
+                selectedAvatar = selectedAvatar.filter(id => id !== avatarId);
+                avatarImage.classList.remove("selected");
+                avatarImage.classList.remove("selected2");
+            } else {
+                if (selectedAvatar.length === 0) {
+                    avatarImage.classList.add("selected");
+                } else if (selectedAvatar.length === 1) {
+                    avatarImage.classList.add("selected2");
+                }
+                selectedAvatar.push(avatarId);
+                selectedAvatarValues.push(value);
+            }
+        }
+
+        function selectMap(mapId, value) {
+            var mapImage = document.getElementById(mapId);
+            if (selectedMap.includes(mapId)) {
+                selectedMap = selectedMap.filter(id => id !== mapId);
+                mapImage.classList.remove("selected3");
+            } else {
+                if (selectedMap.length === 0) {
+                    mapImage.classList.add("selected3");
+                } else if (selectedMap.length === 1) {
+                    mapImage.classList.add("selected3");
+                }
+                selectedMap.push(mapId);
+                selectedMapValues.push(value);
+            }
+        }
+
+        
+        function loadGame() {
+            var playerSelectionMenu = document.getElementById("playerSelectionMenu");
+            var redContainer = document.getElementById("redContainer");
+            redContainer.style.display = "inline-block";
+            playerSelectionMenu.style.display = "none";
+
+            var script = document.createElement("script");
+            script.src = "index.js";
+            document.body.appendChild(script);
+        }
+        var selectedAvatar = [];
+        var selectedMap = [];  
+    </script>
+</body>
+</html>
