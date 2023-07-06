@@ -1,5 +1,5 @@
 # WayOfTheBlade
-===================
+--------
 2-Player Sword fight game using Javascript and HTML canvas
 
 How it works
