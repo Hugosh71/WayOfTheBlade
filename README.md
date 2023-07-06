@@ -12,5 +12,9 @@ How it works
 
 Edit* : refresh the page when you want to restart a game, there is no restart button unfortunately because of my laziness
 
-Preview
+Screenshots
 --------
+<p align="center"><img src="cp1.png"></p>
+<p align="center"><img src="cp2.png"></p>
+<p align="center"><img src="cp3.png"></p>
+<p align="center"><img src="cp4.png"></p>
