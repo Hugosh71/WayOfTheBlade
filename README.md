@@ -2,6 +2,13 @@
 --------
 2-Player Sword fight game using Javascript and HTML canvas
 
+Controls (Player1/Player2)
+--------
+Z/UpArrow : Jump
+Q/LeftArrow : Move forward
+D/RightArrow : Move backward
+S/DownArrow : Attack
+
 How it works
 --------
 - Click on the game's website here: [WayOfTheBlade](https://wayoftheblade.netlify.app/)
